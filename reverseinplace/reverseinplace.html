@@ -1,0 +1,59 @@
+<head>
+<body>
+<h1>REVERSE IN PLACE</h1>
+<br>
+<br>
+This project will take a string and instead of reversing the entire string it will find and reverse the individual word
+<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+<!--Copy paste your javascript code into this spot-->
+//REVERSE IN PLACE
+var str = "the fox and hound ";
+
+for(var i = 0;i < str.length;i++){
+	if(str[i] == " "){
+		for(var j = i - 1;j >= 0;j--){
+			if(str[j] == " ")break;
+				document.write(str[j]);
+
+		}
+		document.write(" ");
+
+	}
+
+}
+
+
+
+<!--Your javascript code should be above this-->
+</h4></code></pre></div>
+<!--Don't Copy Paste Past Here-->
+
+<p>String was "the fox and hound" after we run the code we get...
+<script>
+
+//REVERSE IN PLACE
+var str = "the fox and hound ";
+
+for(var i = 0;i < str.length;i++){
+	if(str[i] == " "){
+		for(var j = i - 1;j >= 0;j--){
+			if(str[j] == " ")break;
+				document.write(str[j]);
+
+		}
+		document.write(" ");
+
+	}
+
+}
+</script>
+<br>
+<br>
+<a href="../index.html">Table of Contents</a>
+</body>
+</head>

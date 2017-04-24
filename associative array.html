@@ -1,0 +1,69 @@
+<head>
+<body>
+<h1>Associative Array</h1>
+This program takes an array of of numbers and finds the duplicates and prints out how many there are.
+<br>
+<br>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+<br>
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+<!--Copy paste your javascript code into this spot-->
+
+var x = [1, 2, 4, 7, 4, 2, 8, 6,6];//array of numbers
+var y = [];//empty array to keep count of the numbers
+
+for(i = 0; i < x.length;i++){//loops through x/array
+	if(y[x[i]] === 1){//if duplicate was found
+	y[x[i]] += 1//add one 
+	}
+	else{
+	y[x[i]] = 1//its just equal to 1
+	}
+	
+}
+
+for(i = 0; i < y.length;i++){ //loops through y/array
+	if (y[i] == undefined) {//if y is undefined do nothing
+	}
+	else {//write out what was found
+	document.write(i + "s found " + y[i] + "<br>");
+	}
+}
+
+
+</h4></code></pre></div>
+
+
+<p>
+</body>
+<script>
+
+var x = [1, 2, 4, 7, 4, 2, 8, 6,6];//array of numbers
+var y = [];//empty array to keep count of the numbers
+
+for(i = 0; i < x.length;i++){//loops through x/array
+	if(y[x[i]] === 1){//if duplicate was found
+	y[x[i]] += 1//add one 
+	}
+	else{
+	y[x[i]] = 1//its just equal to 1
+	}
+	
+}
+
+for(i = 0; i < y.length;i++){ //loops through y/array
+	if (y[i] == undefined) {//if y is undefined do nothing
+	}
+	else {//write out what was found
+	document.write(i + "s found " + y[i] + "<br>");
+	}
+}
+
+
+
+
+
+</script>
+</head>

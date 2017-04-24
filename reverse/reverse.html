@@ -1,0 +1,63 @@
+<head>
+<body>
+<h1>REVERSE</h1>
+<br>
+This project will take a string and reverse the entire string.
+<!--Copy Paste Below me-->
+<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+<!--Copy paste your javascript code into this spot-->
+
+//REVERSE 
+var str = "the fox and hound ";
+
+for(var i = str.length-1;i >= 0;i--){
+	if(str[i] == " "){
+		for(var j = i - 1;j >= 0;j--){
+			if(str[j] == " ")break;
+				document.write(str[j]);
+
+		}
+		document.write(" ");
+
+	}
+
+}
+
+<!--Your javascript code should be above this-->
+</h4></code></pre></div>
+<!--Don't Copy Paste Past Here-->
+
+<p>
+
+
+
+<a href="../index.html">Table of Contents</a>
+<br>
+"the fox and hound " was what was the original string and this is the outcome.
+<script> 
+//REVERSE 
+var str = "the fox and hound ";
+
+for(var i = str.length-1;i >= 0;i--){
+	if(str[i] == " "){
+		for(var j = i - 1;j >= 0;j--){
+			if(str[j] == " ")break;
+				document.write(str[j]);
+
+		}
+		document.write(" ");
+
+	}
+
+}
+
+
+
+</script>
+</head>
+</body>

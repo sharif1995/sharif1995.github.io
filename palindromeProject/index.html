@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  sharif</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+  
+    <script src="js/index.js"></script>
+<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+<!--Copy paste your javascript code into this spot-->
+function isPalindrome(str) { 
+
+
+  if(!isNaN(str))return "error"
+   str = str.replace(/\s+/g,'');//replace spaces
+   str = str.toLowerCase();//replaces all letters to lowercase
+  
+  var rtnStr = '';//return string variable
+  
+  for(var i = str.length-1; i>=0;i--){//-1 bcuz the count starts at 0 
+    rtnStr += str[i];//writes the code backwords ex:apple = elppa
+  }
+  if(rtnStr == str)return true
+    else{
+       return false
+  }
+}   
+     
+
+
+
+<!--Your javascript code should be above this-->
+</h4></code></pre></div>
+<!--Don't Copy Paste Past Here-->
+
+<p>
+</body>
+</html>

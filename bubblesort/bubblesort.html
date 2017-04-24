@@ -1,0 +1,50 @@
+<head>
+<body>
+<h1>bubblesort</h1>
+This program takes a list of fruits and places them in alphabetical order
+<br>
+<br>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+<!--Copy paste your javascript code into this spot-->
+
+var changed = true;
+var list = ["Apple", "Pear", "Berry", "Plum"] 
+alphabetize(list)
+function alphabetize(x){
+	while(changed){
+		changed = false
+			for(var i = 0; i < list.length;i++){
+				if(list[i] > list[i + 1]){
+			
+					var temp = x[i + 1];
+					x[i + 1] = x[i]
+					x[i] = temp
+					changed = true
+				
+		}
+	}
+	
+	}
+	for(var i = 0; i < list.length;i++){
+	document.write(list[i]);
+	}
+
+
+
+</h4></code></pre></div>
+<br>
+This is the outcome of my code:
+<br>
+</head>
+</body>
+<script src="bubblesort.js"></script>
+<br>
+<br>
+<br>
+<br>
+
+<a href="../index.html">Table of Contents</a>

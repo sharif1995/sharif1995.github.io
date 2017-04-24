@@ -1,0 +1,185 @@
+<head>
+
+<body>
+<style>
+.center {
+    margin: auto;
+    width: 75%;
+    border: 7px solid #73AD21;
+    padding: 100px;
+}
+</style><div class="center" align = "center">
+THIS GAME IS CALLED SUPER BOP IT CLICK THE RANDOM ACTIONS AS MANY TIME AS YOU CAN
+              YOU CAN ONLY LOSE BY CLICKING THE WRONG RANDOM ACTION
+<br>
+<br>
+<br>
+<br>
+
+<p id="score">0</p>
+<p id="message">ON YOU</p>
+<button id="bop_button" onclick = "bopIt()">BOP IT</button>
+<button id="twist_button" onclick = "twistIt()">Twist It</button>
+<button id="pull_button"  onclick = "pullIt()">Pull It</button>
+<br>
+<button onclick = "start()">START</button>
+</div>
+<script>
+
+var points = 1 * 10;
+var seconds = 0;
+var isRunning = false;
+var watch;
+var status;
+var theTimer;
+var start;
+
+function start(){
+	if (!isRunning) { //if the watch is NOT running
+		isRunning = true; //the watch is now running
+		
+		// enable all the buttons so the user can click on them
+		
+		bop_button.disabled = false;
+		twist_button.disabled = false;
+		pull_button.disabled = false;
+		
+		//this interval says, every 1 second, increase the seconds by 1, and write it to the webpage.
+		watch = setInterval(
+			function(){ 
+			if(seconds % 5) {
+					randomAction();
+				}
+				
+				seconds++;
+			}, 2000);
+			randomAction();
+	}
+}
+
+
+function resetTimer(){
+clearInterval(watch)//resets timer
+seconds = 0//starts timer at 0
+watch = setInterval(//allows timer to start
+			function(){ 
+				if(seconds == 5) {
+					randomAction();
+				}
+				
+				else {
+					seconds++;
+				
+					count.innerHTML = seconds;
+					randomAction();
+				}
+			}, 1000);
+}
+
+
+
+function gameover() {
+	alert("game over");
+	clearInterval(watch);
+	points = 0
+	
+	// disable the buttons so the user can't click on them
+	bop_button.disabled = true;
+	twist_button.disabled = true;
+	pull_button.disabled = true;
+
+}
+
+// from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomAction() {
+	var my_random_number = getRandomIntInclusive(1,3) ;
+	
+	if(my_random_number == 1) {
+		// bop it
+	
+		message.innerHTML = "sharif says: bop it";
+		status = "bop";
+	} 
+	else if(my_random_number == 2 ) {
+		// twist it
+		message.innerHTML = "sharif says: twist it";
+		status = "twist";
+	} 
+	else if(my_random_number == 3 ) {
+		// twist it
+		message.innerHTML = "sharif says: Pull it";
+		status = "pull";
+		
+
+}
+}
+
+function bopIt(){
+	if(status == "bop") {
+		// good!  user click on the right thing!
+		points += 10;
+		score.innerHTML = "points: " + points;
+	}
+	else {
+		
+		gameover();
+
+	
+	clearInterval(watch);
+	isRunning = false;
+	//start();
+
+	}	
+}
+
+
+
+function twistIt(){
+	if(status == "twist") {
+		// good!  user click on the right thing!
+		points += 10;
+		score.innerHTML = "points: " + points;
+	
+	}
+	else {
+		score.innerHTML = "points: " + points;
+		gameover();
+ 		
+        clearInterval(watch);
+	    isRunning = false;
+	    //start();
+}	
+ }
+ 
+ 
+function pullIt(){
+	if(status == "pull") {
+		// good!  user click on the right thing!
+		points += 10;
+		score.innerHTML = "points: " + points;
+		
+	}
+	else {
+		score.innerHTML = "points: " + points;
+		gameover();
+ 
+       clearInterval(watch);
+	   isRunning = false;
+	   //start();
+	}	
+ }
+
+
+
+
+
+</script>
+<a href = "../index.html">Table of Contents</a>
+</body>
+</head>

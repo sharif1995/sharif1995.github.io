@@ -1,0 +1,98 @@
+<html>
+
+<body>
+    <h1>Monty Hall Problem</h1>
+
+    Welcome to the Monty Hall Problem. In this game, the player (you!) must select one of <b>three</b> doors.<br> Here's the problem, one of the doors contains a car... the other two doors contain a goat behind them. When you pick a door, the host will reveal one of the goats! Then will ask you if you want to switch or stay. Design the Monty Hall game using the starting code and functions, and then test to see if it really is better to switch or not.
+    <br> -----
+    <br>
+    <p id="MontyHall">Welcome to the game! Please, pick a door.</p><br>
+    <button onclick="one()">Door One</button>
+    <button onclick="two()">Door Two</button>
+    <button onclick="three()">Door Three</button><br><br>
+
+    <button onclick="changeDoor()">Change Door!</button><br>
+    <button onclick="keepDoor()">Keep Door.</button><br>
+
+    <p id="result"></p>
+<a href = "../index.html">index</a>
+<script>
+        var firstpick = true; //this is true if it's the person's first pick!
+
+        //This will tell you what is inside each door. If you don't want to use this you can just use a single variable to say where the car is.
+        //example var car = 1; for a car behind door 1.
+        var door1 = "goat";
+        var door2 = "goat";
+        var door3 = "goat";
+        var pick;
+		var randomPlacedCar;
+        //this is the code that will happen when the person picks door one.
+		var roll = Math.floor(Math.random() * 3) + 1; 
+		if (roll == 1){door1 = "car";}
+		if (roll == 2){door2 = "car";}
+		if (roll == 3){door3 = "car";}
+        function one() {
+            if (firstpick == true) { //only run when it's their first pick so they can't cheat.
+                firstpick = false; //when they've picked a door, their first pick is over!
+                pick = door1 
+				
+				if (door2 == "goat") { //if door 2 is a goat, tell them that!
+				
+                    document.getElementById("MontyHall").innerHTML = "<b>You picked door 1. There is a goat behind door 2! Do you want to switch doors?</b>";
+                } else { //if door 2 is not a goat, door 3 must be a goat. Tell them that!
+                    document.getElementById("MontyHall").innerHTML = "<b>You picked door 1. There is a goat behind door 3! Do you want to switch doors?</b>";
+                }
+            }
+        }
+
+//this is the code that will happen when the person picks door two.
+        function two() {
+		 if (firstpick == true) { //only run when it's their first pick so they can't cheat.
+                firstpick = false;
+		         pick = door2
+           if (door1 == "goat") {
+		                       document.getElementById("MontyHall").innerHTML = "<b>You picked door 2. There is a goat behind door 1! Do you want to switch doors?</b>";
+                } else { //if door 2 is not a goat, door 3 must be a goat. Tell them that!
+                    document.getElementById("MontyHall").innerHTML = "<b>You picked door 2. There is a goat behind door 3! Do you want to switch doors?</b>";
+     
+    } 
+        }
+		}
+
+        //this is the code that will happen when the person picks door three.
+        function three() {
+		 if (firstpick == true) { //only run when it's their first pick so they can't cheat.
+                firstpick = false;
+		         pick = door3
+            if (door1 == "goat") { 
+                    document.getElementById("MontyHall").innerHTML = "<b>You picked door 3. There is a goat behind door 1! Do you want to switch doors?</b>";
+                } else { //if door 2 is not a goat, door 3 must be a goat. Tell them that!
+                    document.getElementById("MontyHall").innerHTML = "<b>You picked door 3. There is a goat behind door 2! Do you want to switch doors?</b>";
+           }
+        }
+		 }
+        //this is code that will happen when the person chooses to change doors
+        function changeDoor() {
+		
+		if(pick == "goat"){
+		 document.getElementById("MontyHall").innerHTML = "<b> CONGRADULATIONS YOU WON CAR!!!</b>"
+		}
+		else { document.getElementById("MontyHall").innerHTML = "<b> CONGRADULATIONS YOU WON GOAT!!!</b>"
+        }
+		
+        
+    }
+        //this is code that will happen when the person keeps door.
+        function keepDoor() {
+		if(pick == "car"){
+		 document.getElementById("MontyHall").innerHTML = "<b> CONGRADULATIONS YOU WON CAR!!!</b>"
+		}
+		else { document.getElementById("MontyHall").innerHTML = "<b> CONGRADULATIONS YOU WON GOAT!!!</b>"
+        }
+		
+
+        }
+    </script>
+</body>
+
+</html>
